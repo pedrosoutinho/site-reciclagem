@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Circuito Sustentável - Transforme lixo eletrônico em energia para o futuro">
+    <title>Circuito Sustentável - Reciclagem de Eletrônicos</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path class="recycle-path" d="M50,20 L35,45 L50,45 L50,55 L30,55 L15,80 M50,20 L65,45 L50,45 L50,55 L70,55 L85,80 M15,80 L85,80 L50,30" 
+                          fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                    <circle cx="35" cy="45" r="4" fill="currentColor"/>
+                    <circle cx="65" cy="45" r="4" fill="currentColor"/>
+                    <path d="M30,60 L35,70 M70,60 L65,70 M45,25 L50,15 L55,25" 
+                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h1 class="logo-text">
+                    <span class="logo-main">circuito</span>
+                    <span class="logo-sub">sustentável</span>
+                </h1>
+            </div>
+            <p class="tagline">Transforme lixo eletrônico em energia para o futuro</p>
+            <div class="cta-box">
+                <p class="cta-text">Dê o destino certo para seus equipamentos eletroeletrônicos!</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#mapa" class="nav-link">Mapa de Coleta</a>
+            <a href="#recebemos" class="nav-link">O Que Recebemos</a>
+            <a href="#meio-ambiente" class="nav-link">Meio Ambiente</a>
+        </div>
+    </nav>
+
+    <!-- Map Section -->
+    <section id="mapa" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Pontos de Coleta</h2>
+            <div id="map" class="map-container"></div>
+            <div id="location-info" class="location-info"></div>
+        </div>
+    </section>
+
+    <!-- What We Accept Section -->
+    <section id="recebemos" class="items-section">
+        <div class="container">
+            <h2 class="section-title">O QUE RECEBEMOS</h2>
+            
+            <h3 class="category-title">Linha Verde:</h3>
+            <div class="items-grid">
+                <div class="item-card" data-item="pilhas">
+                    <div class="item-header">
+                        <h4 class="item-name">Pilhas</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Pilhas contêm metais pesados como mercúrio, chumbo e cádmio que podem contaminar solo e água.</p>
+                        <p><strong>Como descartar:</strong> Remova as pilhas dos equipamentos e entregue em pontos de coleta especializados.</p>
+                        <p><strong>Impacto ambiental:</strong> Uma única pilha pode contaminar até 20.000 litros de água.</p>
+                    </div>
+                </div>
+
+                <div class="item-card" data-item="baterias">
+                    <div class="item-header">
+                        <h4 class="item-name">Baterias</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Baterias recarregáveis contêm lítio, níquel e cobalto - materiais valiosos e tóxicos.</p>
+                        <p><strong>Como descartar:</strong> Entregue baterias de celulares, notebooks e outros dispositivos em pontos de coleta.</p>
+                        <p><strong>Impacto ambiental:</strong> Materiais recuperados podem ser reutilizados em novas baterias, reduzindo mineração.</p>
+                    </div>
+                </div>
+
+                <div class="item-card" data-item="fones">
+                    <div class="item-header">
+                        <h4 class="item-name">Fones</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Contêm cobre nos fios e plásticos que podem ser reciclados.</p>
+                        <p><strong>Como descartar:</strong> Não jogue no lixo comum. Fones quebrados ou antigos devem ir para reciclagem eletrônica.</p>
+                        <p><strong>Impacto ambiental:</strong> O cobre é um material valioso que pode ser recuperado e reutilizado.</p>
+                    </div>
+                </div>
+
+                <div class="item-card" data-item="cabos">
+                    <div class="item-header">
+                        <h4 class="item-name">Cabos</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Cabos contêm cobre e outros metais valiosos dentro do isolamento plástico.</p>
+                        <p><strong>Como descartar:</strong> Cabos USB, HDMI, carregadores e fios diversos podem ser reciclados.</p>
+                        <p><strong>Impacto ambiental:</strong> A recuperação de cobre reduz a necessidade de mineração e economiza energia.</p>
+                    </div>
+                </div>
+
+                <div class="item-card" data-item="carregadores">
+                    <div class="item-header">
+                        <h4 class="item-name">Carregadores</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Carregadores contêm circuitos eletrônicos, metais e plásticos recicláveis.</p>
+                        <p><strong>Como descartar:</strong> Entregue carregadores antigos ou defeituosos em pontos de coleta.</p>
+                        <p><strong>Impacto ambiental:</strong> Componentes eletrônicos podem liberar substâncias tóxicas se descartados incorretamente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="category-title">Linha Preta:</h3>
+            <div class="items-grid">
+                <div class="item-card" data-item="teclados">
+                    <div class="item-header">
+                        <h4 class="item-name">Teclados</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Teclados contêm plástico ABS, circuitos eletrônicos e metais que podem ser recuperados.</p>
+                        <p><strong>Como descartar:</strong> Teclados USB, sem fio ou de notebooks devem ser entregues em pontos de coleta.</p>
+                        <p><strong>Impacto ambiental:</strong> O plástico recuperado pode ser usado em novos produtos.</p>
+                    </div>
+                </div>
+
+                <div class="item-card" data-item="mouses">
+                    <div class="item-header">
+                        <h4 class="item-name">Mouses</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Contêm placas de circuito, sensores ópticos e plásticos recicláveis.</p>
+                        <p><strong>Como descartar:</strong> Mouses com ou sem fio podem ser reciclados. Remova as baterias antes.</p>
+                        <p><strong>Impacto ambiental:</strong> Componentes eletrônicos contêm materiais valiosos como ouro e cobre.</p>
+                    </div>
+                </div>
+
+                <div class="item-card" data-item="tablets">
+                    <div class="item-header">
+                        <h4 class="item-name">Tablets</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Tablets contêm metais preciosos, terras raras e baterias de lítio.</p>
+                        <p><strong>Como descartar:</strong> Apague todos os dados pessoais antes de entregar para reciclagem.</p>
+                        <p><strong>Impacto ambiental:</strong> Terras raras são recursos limitados e essenciais para tecnologia moderna.</p>
+                    </div>
+                </div>
+
+                <div class="item-card" data-item="smartphones">
+                    <div class="item-header">
+                        <h4 class="item-name">Smartphones</h4>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="item-details">
+                        <p><strong>Por que reciclar:</strong> Contêm ouro, prata, cobre, paládio e terras raras em placas e componentes.</p>
+                        <p><strong>Como descartar:</strong> Faça backup e apague todos os dados. Remova cartões SIM e de memória.</p>
+                        <p><strong>Impacto ambiental:</strong> Um milhão de celulares reciclados recuperam 16 toneladas de cobre e 350kg de prata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Impact Section -->
+    <section id="meio-ambiente" class="environment-section">
+        <div class="container">
+            <h2 class="section-title">Ajude o meio ambiente</h2>
+            <div class="environment-content">
+                <div class="environment-icon">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M30,50 Q30,30 50,30 Q70,30 70,50 Q70,70 50,70 Q30,70 30,50" fill="currentColor" opacity="0.3"/>
+                        <text x="50" y="55" text-anchor="middle" font-size="40" fill="currentColor">🌍</text>
+                    </svg>
+                </div>
+                <p class="environment-text">
+                    Evite a contaminação do solo e da água e colabore para a reciclagem de materiais valiosos.
+                </p>
+                <ul class="benefits-list">
+                    <li>Reduz a extração de recursos naturais</li>
+                    <li>Diminui a poluição do solo e da água</li>
+                    <li>Economiza energia na produção de novos dispositivos</li>
+                    <li>Recupera metais preciosos e materiais valiosos</li>
+                    <li>Contribui para a economia circular</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <div class="resitech-logo">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M25,15 L25,35 M15,25 L35,25" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="25" cy="25" r="5" fill="currentColor"/>
+                    </svg>
+                    <span>ResTech</span>
+                </div>
+            </div>
+            <p class="footer-text">
+                Um projeto dos alunos de Ciência da Computação da UNIFOR,<br>
+                desenvolvido na disciplina de Projeto de Tecnologia Intercursos
+            </p>
+            <p class="footer-copyright">
+                &copy; 2025 Circuito Sustentável. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="data/locations.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
